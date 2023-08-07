@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import post.model.service.PostService;
+import post.model.vo.PageData;
 import post.model.vo.Post;
 
 /**
@@ -34,14 +35,20 @@ public class PostListController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		PostService service = new PostService();
-//		int currentPage = Integer.parseInt(request.getParameter("currentPage"));
-//		PageData pd = service.selectPostList(currentPage);
-//		List<Post> nList = service.selectPostList();
-//		request.setAttribute("nList", nList);
-//		RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/views/post/postlist.jsp");
-//		view.forward(request, response);
-//		request.getRequestDispatcher("/WEB-INF/views/post/postlist.jsp").forward(request, response);
+		PostService service = new PostService();
+		String page = request.getParameter("currentPage") != null ? request.getParameter("currentPage") : "1";
+		int currentPage = Integer.parseInt(page);
+		List<Post> pList = service.selectPostList(currentPage);
+		PageData pd = ;
+		if(!pList.isEmpty()) {
+			request.setAttribute("pList", pList);
+			request.setAttribute("pageNavi", pd.getPageNavi());
+			request.getRequestDispatcher("/WEB-INF/views/post/postlist.jsp").forward(request, response);
+		}else {
+			request.setAttribute("msg", "데이터가 존재하지 않습니다.");
+			request.setAttribute("url", "/index.jsp");
+			request.getRequestDispatcher("/WEB-INF/views/common/serviceFailed.jsp").forward(request, response);
+		}
 	}
 
 	/**

@@ -55,7 +55,7 @@ public class LoginController extends HttpServlet {
 			.forward(request, response);
 		} else {
 			// 로그인 실패
-			request.setAttribute("msg", "로그인 실패");
+			request.setAttribute("msg", "존재하지 않는 회원 정보입니다.");
 			request.setAttribute("url", "/member/login.jsp");
 			request.getRequestDispatcher("/WEB-INF/views/common/serviceFailed.jsp")
 			.forward(request, response);

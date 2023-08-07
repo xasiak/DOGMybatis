@@ -1,10 +1,13 @@
 package member.model.vo;
 
+import java.sql.Date;
+
 public class Member {
 	private String memberEmail;
 	private String memberPw;
 	private String memberName;
 	private String memberPhone;
+	private Date memberDate;
 	
 	public Member() {}
 
@@ -15,7 +18,16 @@ public class Member {
 		this.memberName = memberName;
 		this.memberPhone = memberPhone;
 	}
-	
+
+	public Member(String memberEmail, String memberPw, String memberName, String memberPhone, Date memberDate) {
+		super();
+		this.memberEmail = memberEmail;
+		this.memberPw = memberPw;
+		this.memberName = memberName;
+		this.memberPhone = memberPhone;
+		this.memberDate = memberDate;
+	}
+
 	public Member(String memberEmail, String memberPw) {
 		super();
 		this.memberEmail = memberEmail;
@@ -54,11 +66,21 @@ public class Member {
 		this.memberPhone = memberPhone;
 	}
 
+	public Date getMemberDate() {
+		return memberDate;
+	}
+
+	public void setMemberDate(Date memberDate) {
+		this.memberDate = memberDate;
+	}
+
 	@Override
 	public String toString() {
 		return "회원 [이메일=" + memberEmail + ", 비밀번호=" + memberPw + ", 이름=" + memberName
-				+ ", 전화번호=" + memberPhone + "]";
+				+ ", 전화번호=" + memberPhone + ", 가입날짜=" + memberDate + "]";
 	}
+
+	
 	
 	
 }
