@@ -33,7 +33,7 @@ public class UpdateController extends HttpServlet {
 		String memberEmail = request.getParameter("member-email");
 		Member member = service.selectOneByEmail(memberEmail);
 		request.setAttribute("member", member); 
-		request.getRequestDispatcher("/WEB-INF/views/member/modify.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/views/member/myPage.jsp").forward(request, response);
 	}
 
 	/**

@@ -28,4 +28,8 @@
 	<select id="selectOneByEmail" resultMap="memberResultMap">
 		SELECT * FROM MEMBER_TBL WHERE MEMBER_EMAIL = #{ memberEmail }
 	</select>
+	
+	<delete id="deleteMember">
+		DELETE FROM MEMBER_TBL WHERE MEMBER_EMAIL = #{memberEmail }
+	</delete>
 </mapper>

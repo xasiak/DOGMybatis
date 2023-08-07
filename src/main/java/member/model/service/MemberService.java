@@ -55,4 +55,16 @@ public class MemberService {
 		return member;
 	}
 
+	public int deleteMember(String memberEmail) {
+		SqlSession session = SqlSessionTemplate.getSqlSession();
+		int result = mDao.deleteMember(session, memberEmail);
+		if(result > 0) {
+			session.commit();
+		}else {
+			session.rollback();
+		}
+		session.close();
+		return result;
+	}
+
 }

@@ -53,7 +53,7 @@ public class TermsController extends HttpServlet {
 //		if(result>0) {
 //			request.setAttribute("msg", "회원가입 성공했어요");
 //			request.setAttribute("url", "/index.jsp");
-//			request.getRequestDispatcher("/member/serviceSuccess.jsp")
+//			request.getRequestDispatcher("/WEB-INF/views/common/serviceSuccess.jsp")
 //			.forward(request, response);
 //		}else {
 //			request.setAttribute("msg", "회원가입 실패했어요");

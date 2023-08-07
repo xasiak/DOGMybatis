@@ -22,4 +22,8 @@
 	<select id="selectOneByNo" resultMap="postResultMap">
 		SELECT * FROM POST_TBL WHERE POST_NO = #{postNo }
 	</select>
+	
+	<select id="getTotalCount" resultType="_int">
+		SELECT COUNT(*) FROM POST_TBL
+	</select>
 </mapper>

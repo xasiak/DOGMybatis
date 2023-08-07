@@ -38,7 +38,7 @@
             <a href="#">사랑하개 활동</a>
         </li>
         <li>
-            <a href="#">정기후원</a>
+            <a href="/support/support.do">정기후원</a>
         </li>
         <li>
             <a href="#">입양</a>

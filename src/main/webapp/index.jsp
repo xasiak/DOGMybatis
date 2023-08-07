@@ -55,7 +55,7 @@
                 <section class="main-layer" id="main-layer4">
                     <div id="main4-text">
                         <a href="#"><h2>입양사진 및 후기</h1></a>
-                        <a href="#"><h3>우리 아이들의 행복뿜뿜 즐거운 생활! 함께하개는 아이를 극진히 사랑할 가족과 이어줍니다.<button class="more" type="button" onclick="location.href='#'">더보기</button></h3></a>
+                        <a href="#"><h3>우리 아이들의 행복뿜뿜 즐거운 생활! 함께하개는 아이를 극진히 사랑할 가족과 이어줍니다.<button class="more" type="button" onclick="location.href='/post/postlist.do'">더보기</button></h3></a>
                     </div>
                     <div>
                         <div class="main-img"><img class="img" src="/resources/images/adopt/adopt1.png" alt=""></div>

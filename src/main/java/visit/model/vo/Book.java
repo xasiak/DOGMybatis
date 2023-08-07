@@ -7,24 +7,25 @@ public class Book {
 	private String bookUserPhone;
 	private String bookPoint;
 	private Date bookDate;
+	private String bookTime;
 	private String bookConcern;
 	private String bookUserHouse;
 	private String bookUserHouseHold;
 	
 	public Book() {}
-	
-	public Book(String bookUserName, String bookUserPhone, String bookPoint, Date bookDate, String bookConcern,
-			String bookUserHouse, String bookUserHouseHold) {
+
+	public Book(String bookUserName, String bookUserPhone, String bookPoint, Date bookDate, String bookTime,
+			String bookConcern, String bookUserHouse, String bookUserHouseHold) {
 		super();
 		this.bookUserName = bookUserName;
 		this.bookUserPhone = bookUserPhone;
 		this.bookPoint = bookPoint;
 		this.bookDate = bookDate;
+		this.bookTime = bookTime;
 		this.bookConcern = bookConcern;
 		this.bookUserHouse = bookUserHouse;
 		this.bookUserHouseHold = bookUserHouseHold;
 	}
-
 
 	public String getBookUserName() {
 		return bookUserName;
@@ -58,6 +59,14 @@ public class Book {
 		this.bookDate = bookDate;
 	}
 
+	public String getBookTime() {
+		return bookTime;
+	}
+
+	public void setBookTime(String bookTime) {
+		this.bookTime = bookTime;
+	}
+
 	public String getBookConcern() {
 		return bookConcern;
 	}
@@ -85,9 +94,10 @@ public class Book {
 	@Override
 	public String toString() {
 		return "Book [bookUserName=" + bookUserName + ", bookUserPhone=" + bookUserPhone + ", bookPoint=" + bookPoint
-				+ ", bookDate=" + bookDate + ", bookConcern=" + bookConcern + ", bookUserHouse=" + bookUserHouse
-				+ ", bookUserHouseHold=" + bookUserHouseHold + "]";
+				+ ", bookDate=" + bookDate + ", bookTime=" + bookTime + ", bookConcern=" + bookConcern
+				+ ", bookUserHouse=" + bookUserHouse + ", bookUserHouseHold=" + bookUserHouseHold + "]";
 	}
+	
 	
 	
 	

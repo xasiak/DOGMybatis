@@ -19,13 +19,13 @@ public class PostService {
 		pDao = new PostDAO();
 	}
 	
-	public List<Post> selectPostList(int currentPage) {
+	public PageData selectPostList(int currentPage) {
 		SqlSession session = SqlSessionTemplate.getSqlSession();
 		List<Post> pList = pDao.selectPostList(session, currentPage);
-		String pageNavi = pDao.generatePageNavi(currentPage);
+		String pageNavi = pDao.generatePageNavi(session, currentPage);
 		PageData pd = new PageData(pList,pageNavi);
 		session.close();
-		return pList;
+		return pd;
 	}
 
 	public Post selectOneByNo(int postNo) {

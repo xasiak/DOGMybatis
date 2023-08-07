@@ -5,14 +5,14 @@
 	<head>
 		<meta charset="UTF-8">
  <title>정보수정</title>
-        <link rel="stylesheet" href="/resources/css/modify.css">
+        <link rel="stylesheet" href="/resources/css/myPage.css">
         <link rel="stylesheet" href="/resources/css/reset.css">
     </head>
     <body>
         <div id="container">
             <jsp:include page="/WEB-INF/views/include/header.jsp"></jsp:include>
             <main id="main">
-                <h3>정보수정</h3>
+                <h3>마이페이지</h3>
                 <div id="modify">
                     <div id="modifyform-t">
                         <div id="pfp">
@@ -34,19 +34,19 @@
                         </div>
                         <p class="title" >이름</p>
                         <div id="name">
-                            <input class="modifyform" type="text" name="member-name" id="member-name" placeholder="이름">
+                            <input class="modifyform" type="text" name="member-name" id="member-name" value="${member.memberName }" placeholder="이름">
                         </div>
                         <p class="title">연락처</p>
                         <div id="phone">
-                            <input class="modifyform" type="text" name="member-phone" id="member-phone" placeholder="연락처">
+                            <input class="modifyform" type="text" name="member-phone" id="member-phone" value="${member.memberPhone }" placeholder="연락처">
                         </div>
-                        <div><button type="submit" id="modifybtn" class="modifyform" >확인</button></div>
+                        <div><button type="submit" id="modifybtn" class="modifyform" >수정하기</button></div>
                         </form>
                         <p id="p1">소셜 로그인</p>
                         <div  id="sns"> <button class="modifyform" id="naverbtn"> 네이버 연결해제</button></div>
                         <div id="n">N</div>
                         <div id="modify-footer">
-                            <a href="#">탈퇴하기</a>
+                            <a href="javascript:void(0)" onclick="checkDelete();">탈퇴하기</a>
                         </div>
                     </div>
         </main>
@@ -77,5 +77,15 @@
 //         		alert("different");
 //         	}
         </script>
+        <script>
+		// /member/delete.do?memberId='${sessionScope.memberId }'
+			function checkDelete(){
+				const memberEmail = '${sessionScope.memberEmail }';
+				if(confirm("탈퇴하시겠습니까?")){
+					location.href = "/member/delete.do?memberEmail="+memberEmail;
+				}
+			}
+			
+		</script>
     </body>
 </html>

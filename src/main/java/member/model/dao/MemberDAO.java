@@ -39,6 +39,11 @@ public class MemberDAO {
 		Member member = session.selectOne("MemberMapper.selectOneByEmail", memberEmail);
 		return member;
 	}
+
+	public int deleteMember(SqlSession session, String memberEmail) {
+		int result = session.delete("MemberMapper.deleteMember", memberEmail);
+		return result;
+	}
 	
 
 }

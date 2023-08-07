@@ -44,7 +44,7 @@ public class BookController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //		DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 		request.setCharacterEncoding("UTF-8");
-		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 		BookService service = new BookService();
 		Book book = null;
 		try {
@@ -55,10 +55,11 @@ public class BookController extends HttpServlet {
 //		Date selectDate = Date.valueOf(date);
 			Date date = format.parse(request.getParameter("select-date"));
 			java.sql.Date selectDate = new java.sql.Date(date.getTime());
+			String selectTime = request.getParameter("select-time");
 			String concern = request.getParameter("concerns");
 			String house = request.getParameter("house");
 			String houseHold = request.getParameter("house-hold");
-			book = new Book(userName, userPhone, point, selectDate, concern, house, houseHold);
+			book = new Book(userName, userPhone, point, selectDate, selectTime, concern, house, houseHold);
 			int result = service.insertBook(book);
 			if(result > 0) {
 				request.setAttribute("msg", "방문예약이 완료되었습니다.");

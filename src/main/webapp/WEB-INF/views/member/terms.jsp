@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -14,11 +15,11 @@
             <main id="main">
                 <div id="joinform">
                         <div class="agree"> 
-                            <input type="checkbox">
+                            <input type="checkbox" name='term' value='selectall' onclick='selectAll(this)'/>
                             이용약관, 개인정보 수집 및 이용에 모두 동의합니다.
                         </div>
                         <div class="agree"> 
-                            <input type="checkbox">
+                            <input type="checkbox" name='term'>
                             이용약관 동의<span id="color">(필수)</span>
                         </div>
                         <div class="terms">
@@ -54,7 +55,7 @@
 
                         </div>
                         <div class="agree"> 
-                            <input type="checkbox">
+                            <input type="checkbox" name='term'>
                             개인정보 수집 및 이용 동의<span id="color">(필수)</span>
                         </div>
                         <div class="terms">
@@ -81,5 +82,15 @@
         </main>
         <jsp:include page="/WEB-INF/views/include/footer.jsp"></jsp:include>
         </div>
+        <script type="text/javascript">
+        function selectAll(selectAll)  {
+		  const checkboxes 
+		       = document.getElementsByName('term');
+		  
+		  checkboxes.forEach((checkbox) => {
+		    checkbox.checked = selectAll.checked;
+		  })
+		}
+        </script>
     </body>
 </html>

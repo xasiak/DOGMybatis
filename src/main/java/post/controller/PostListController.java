@@ -38,11 +38,12 @@ public class PostListController extends HttpServlet {
 		PostService service = new PostService();
 		String page = request.getParameter("currentPage") != null ? request.getParameter("currentPage") : "1";
 		int currentPage = Integer.parseInt(page);
-		List<Post> pList = service.selectPostList(currentPage);
-		PageData pd = ;
+		PageData pd = service.selectPostList(currentPage);
+		List<Post> pList = pd.getpList();
+		String pageNavi = pd.getPageNavi();
 		if(!pList.isEmpty()) {
 			request.setAttribute("pList", pList);
-			request.setAttribute("pageNavi", pd.getPageNavi());
+			request.setAttribute("pageNavi", pageNavi);
 			request.getRequestDispatcher("/WEB-INF/views/post/postlist.jsp").forward(request, response);
 		}else {
 			request.setAttribute("msg", "데이터가 존재하지 않습니다.");
