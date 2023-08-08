@@ -16,7 +16,7 @@ import visit.model.vo.Book;
 /**
  * Servlet implementation class BookListController
  */
-@WebServlet("/book/bookList.do")
+@WebServlet("/visit/bookList.do")
 public class BookListController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -36,7 +36,7 @@ public class BookListController extends HttpServlet {
 		List<Book> bList = service.selectBookList();
 		if(!bList.isEmpty()) {
 			request.setAttribute("bList", bList);
-			request.getRequestDispatcher("/WEB-INF/views/book/bookList.jsp");
+			request.getRequestDispatcher("/WEB-INF/views/visit/bookList.jsp");
 		}else {
 			request.setAttribute("msg", "데이터 조회가 완료되지 않았습니다.");
 			request.setAttribute("url", "/member/myPage.jsp");

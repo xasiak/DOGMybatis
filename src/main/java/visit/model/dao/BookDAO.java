@@ -13,14 +13,10 @@ public class BookDAO {
 		int result = session.insert("BookMapper.insertBook", book);
 		return result;
 	}
-	
-	public List<Book> selectAllList(SqlSession session){
-		return null;
-	}
 
 	public List<Book> selectBookList(SqlSession session) {
-		// TODO Auto-generated method stub
-		return null;
+		List<Book> bList = session.selectList("BookMapper.selectBookList");
+		return bList;
 	}
 	
 

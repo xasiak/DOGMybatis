@@ -2,6 +2,7 @@ package visit.model.service;
 
 import java.util.List;
 
+
 import org.apache.ibatis.session.SqlSession;
 
 import common.SqlSessionTemplate;
@@ -30,10 +31,9 @@ public class BookService {
 
 	public List<Book> selectBookList() {
 		SqlSession session = SqlSessionTemplate.getSqlSession();
-		List<Book> list = bDao.selectBookList(session);
-		list = session.selectList("boardSearchAll");
+		List<Book> bList = bDao.selectBookList(session);
 		session.close();
-		return list;
+		return bList;
 	}
 	
 	
