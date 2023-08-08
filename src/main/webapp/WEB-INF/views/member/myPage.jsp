@@ -40,6 +40,7 @@
                         <div id="phone">
                             <input class="modifyform" type="text" name="member-phone" id="member-phone" value="${member.memberPhone }" placeholder="연락처">
                         </div>
+                        <div><a href="/visit/bookList.do"><button id="modifybtn" class="modifyform" >방문예약내역</button></a></div>
                         <div><button type="submit" id="modifybtn" class="modifyform" >수정하기</button></div>
                         </form>
                         <p id="p1">소셜 로그인</p>

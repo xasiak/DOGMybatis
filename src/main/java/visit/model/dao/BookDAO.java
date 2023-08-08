@@ -12,4 +12,10 @@ public class BookDAO {
 		int result = session.insert("BookMapper.insertBook", book);
 		return result;
 	}
+	
+	public List<Book> selectAllList(SqlSession session, ){
+		
+	}
+	
+
 }

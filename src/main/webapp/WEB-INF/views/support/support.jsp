@@ -36,8 +36,8 @@
 			<div>
 				<h1>xasiak@naver.com</h1>
 			</div>
-			<button>정기후원하기</button>
-			<button>후원내역확인</button>
+			<a href="/support/regular.do">정기후원하기</a>
+			<a href="/support/details.do">후원내역확인</a>
 			</main>
 			<jsp:include page="/WEB-INF/views/include/footer.jsp"></jsp:include>
 		</div>

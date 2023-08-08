@@ -3,8 +3,25 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
+
 <mapper namespace="BookMapper">
+
+	<resultMap type="visit.model.vo.Book" id="bookResultMap">
+		<result property="bookUserName" 	column="BOOK_USER_NAME" />
+		<result property="bookUserPhone" 	column="BOOK_USER_PHONE" />
+		<result property="bookPoint" column="BOOK_POINT" />
+		<result property="bookDate" 	column="BOOK_DATE" />
+		<result property="bookTime" 	column="BOOK_TIME" />
+		<result property="bookConcern" 	column="BOOK_CONCERN" />
+		<result property="bookUserHouse" 	column="BOOK_USER_HOUSE" />
+		<result property="bookUserHousehold" 	column="BOOK_USER_HOUSEHOLD" />
+	</resultMap>
+	
 	<insert id="insertBook">
 		INSERT INTO BOOK_TBL VALUES(#{bookUserName },#{bookUserPhone },#{bookPoint },#{bookDate },#{bookConcern },#{bookUserHouse },#{bookUserHouseHold })
 	</insert>
+	
+	<select id="selectBookList" resultMap="bookResultMap">
+		SELECT * FROM BOOK_TBL ORDER BY BOOK_DATE DESC
+	</select>
 </mapper>
