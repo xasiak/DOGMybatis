@@ -5,6 +5,7 @@ import java.sql.Date;
 public class Book {
 	private String bookUserName;
 	private String bookUserPhone;
+	private String bookUserEmail;
 	private String bookPoint;
 	private Date bookDate;
 	private String bookTime;
@@ -14,11 +15,12 @@ public class Book {
 	
 	public Book() {}
 
-	public Book(String bookUserName, String bookUserPhone, String bookPoint, Date bookDate, String bookTime,
-			String bookConcern, String bookUserHouse, String bookUserHouseHold) {
+	public Book(String bookUserName, String bookUserPhone, String bookUserEmail, String bookPoint, Date bookDate,
+			String bookTime, String bookConcern, String bookUserHouse, String bookUserHouseHold) {
 		super();
 		this.bookUserName = bookUserName;
 		this.bookUserPhone = bookUserPhone;
+		this.bookUserEmail = bookUserEmail;
 		this.bookPoint = bookPoint;
 		this.bookDate = bookDate;
 		this.bookTime = bookTime;
@@ -41,6 +43,14 @@ public class Book {
 
 	public void setBookUserPhone(String bookUserPhone) {
 		this.bookUserPhone = bookUserPhone;
+	}
+
+	public String getBookUserEmail() {
+		return bookUserEmail;
+	}
+
+	public void setBookUserEmail(String bookUserEmail) {
+		this.bookUserEmail = bookUserEmail;
 	}
 
 	public String getBookPoint() {
@@ -93,10 +103,12 @@ public class Book {
 
 	@Override
 	public String toString() {
-		return "Book [bookUserName=" + bookUserName + ", bookUserPhone=" + bookUserPhone + ", bookPoint=" + bookPoint
-				+ ", bookDate=" + bookDate + ", bookTime=" + bookTime + ", bookConcern=" + bookConcern
-				+ ", bookUserHouse=" + bookUserHouse + ", bookUserHouseHold=" + bookUserHouseHold + "]";
+		return "Book [bookUserName=" + bookUserName + ", bookUserPhone=" + bookUserPhone + ", bookUserEmail="
+				+ bookUserEmail + ", bookPoint=" + bookPoint + ", bookDate=" + bookDate + ", bookTime=" + bookTime
+				+ ", bookConcern=" + bookConcern + ", bookUserHouse=" + bookUserHouse + ", bookUserHouseHold="
+				+ bookUserHouseHold + "]";
 	}
+
 	
 	
 	

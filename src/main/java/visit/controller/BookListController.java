@@ -33,10 +33,12 @@ public class BookListController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		BookService service = new BookService();
-		List<Book> bList = service.selectBookList();
+		String userEmail = request.getParameter("user-email");
+		List<Book> bList = service.selectBookList(userEmail);
+		System.out.println(userEmail);
 		if(!bList.isEmpty()) {
 			request.setAttribute("bList", bList);
-			request.getRequestDispatcher("/WEB-INF/views/visit/bookList.jsp");
+			request.getRequestDispatcher("/WEB-INF/views/visit/bookList.jsp").forward(request, response);
 		}else {
 			request.setAttribute("msg", "데이터 조회가 완료되지 않았습니다.");
 			request.setAttribute("url", "/member/myPage.jsp");

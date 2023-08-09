@@ -23,6 +23,9 @@
                         <li>
                             <span>연락처</span> <input type="text" name="user-phone" placeholder="  010-1234-5678" required> <br>
                         </li>
+                        <li>
+                            <span>이메일</span> <input type="text" name="user-email" value="${sessionScope.memberEmail }" required> <br>
+                        </li>
                         <li class="select" >
                             <span>방문희망지점</span>
                             <select  name="point" id="select-point" required>

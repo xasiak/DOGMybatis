@@ -14,8 +14,8 @@ public class BookDAO {
 		return result;
 	}
 
-	public List<Book> selectBookList(SqlSession session) {
-		List<Book> bList = session.selectList("BookMapper.selectBookList");
+	public List<Book> selectBookList(SqlSession session, String userEmail) {
+		List<Book> bList = session.selectList("BookMapper.selectBookList", userEmail);
 		return bList;
 	}
 	

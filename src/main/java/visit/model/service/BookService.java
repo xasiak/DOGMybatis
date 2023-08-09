@@ -29,9 +29,10 @@ public class BookService {
 		return result;
 	}
 
-	public List<Book> selectBookList() {
+	public List<Book> selectBookList(String userEmail) {
 		SqlSession session = SqlSessionTemplate.getSqlSession();
-		List<Book> bList = bDao.selectBookList(session);
+		List<Book> bList = bDao.selectBookList(session, userEmail);
+//		System.out.println(userEmail);
 		session.close();
 		return bList;
 	}
